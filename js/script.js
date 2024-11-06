@@ -33,6 +33,15 @@ const showMinMax = function (expenses) {
 
   const maxListItem = document.createElement("li");
   maxListItem.innerText = `Max: $ ${max}`;
-}
+
+  results.append(minListItem);
+  results.append(maxListItem);
+
+  results.classList.remove("hide");
+};
 
 // Write click event listener for 'button' and call the showMinMax function
+button.addEventListener("click", function () {
+  showMinMax(expenses);
+  button.disabled = true;
+});
